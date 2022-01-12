@@ -36,7 +36,7 @@ function tryCatchExemplo(string) {
     }
 }
 
-tryCatchExemplo('');
+tryCatchExemplo('ana');
 
 //########################################################
 //
@@ -62,7 +62,7 @@ function tryCatchExemplo(string) {
     }
 }
 
-tryCatchExemplo('');
+tryCatchExemplo('ana');
 
 //########################################################
 //
@@ -70,14 +70,14 @@ tryCatchExemplo('');
 //
 //########################################################
 
-new Error(message, fileName, lineNumber);
+// new Error(message, fileName, lineNumber);
 
 // todos os parametros são opcionais
 
 const MeuErro = new Error('Mensagem inválida');
 MeuErro.name = 'InvalidMessage';
 
-throw MeuErro;
+// throw MeuErro;
 
 //      O objetivo é que a função receba um array e 
 //     retorne ele caso o seu tamanho corresponda ao
@@ -104,38 +104,39 @@ function validaArray(arr, num) {
 
         if(typeof arr !== 'object') throw new TypeError("Arr precisa ser do tipo object");
 
-        if(typeof arr !== 'number') throw new TypeError("Num precisa ser do tipo number");
+        if(typeof num !== 'number') throw new TypeError("Num precisa ser do tipo number");
 
         if(arr.length !== num) throw new RangeError("Tamanho invalido!");
 
+        console.log(arr + ' é valido')
     } catch (err) {
 
-        if(e instanceof ReferenceError) {
+        if(err instanceof ReferenceError) {
 
             console.log("Este erro é um ReferenceError!");
-            console.log(e.message);
+            console.log(err.message);
 
-        } else if (e instanceof TypeError) {
+        } else if (err instanceof TypeError) {
 
             console.log("Este erro é um TypeError!");
-            console.log(e.message);
+            console.log(err.message);
 
-        } else if (e instanceof RangeError) {
+        } else if (err instanceof RangeError) {
 
             console.log("Este erro é um RangeError!");
-            console.log(e.message);
+            console.log(err.message);
 
         } else {
 
-            console.log("Ocorreu um erro não esperado: " + e);
+            console.log("Ocorreu um erro não esperado: " + err);
 
         }
 
     }
 }
 
-console.log(validaArray());
-console.log(validaArray(5, 5));
-console.log(validaArray([], 'a'));
-console.log(validaArray([], 5));
+// console.log(validaArray());
+// console.log(validaArray(5, 5));
+// console.log(validaArray([], 'a'));
+// console.log(validaArray([], 5));
 console.log(validaArray([1, 2, 3, 4, 5], 5));

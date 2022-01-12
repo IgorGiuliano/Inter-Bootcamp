@@ -14,12 +14,12 @@ function nome(parametros) {
 //
 //################################################################
 
-const soma = function (a,b) {
+const soma1 = function (a,b) {
     return a + b;
 }
 
-soma(1, 2); //3
-soma(5, 4); //9
+soma1(1, 2); //3
+soma1(5, 4); //9
 
 //################################################################
 //
@@ -334,12 +334,6 @@ usuario.getId(); // 1
 
 console.log(this) // {}
 
-(
-    function() {
-        console.log(this); // Object [global]
-    }
-)();
-
 const pessoa = {
     nome: "Igor"
 };
@@ -363,7 +357,7 @@ const myObj = {
     num2: 4,
 };
 
-function soma(a, b) {
+function soma3(a, b) {
     console.log(this.num1 + this.num2 + a + b);
 }
 
@@ -396,11 +390,11 @@ const holaMundo = () => {
 
 const helloWorld = () => "Hello World";
 
-const soma = (a, b) => a + b;
-soma(4, 6); // 10
+const somaa = (a, b) => a + b;
+somaa(4, 6); // 10
 
-const soma = a => a;
-soma(4); // 4
+const somaaa = a => a;
+somaa(4); // 4
 
 /* 
     Arrows Functions não aceitam metodos para modificar o valor de this, não existe objeto "arguments", o construtor não pode ser utilizado.
@@ -469,18 +463,18 @@ function calculaIdade(anos) {
 	} anos de idade.`;
 }
 
-const pessoa = {
+const pessoaa = {
     nome: "Igor",
     idade: 19
 };
 
-const animal = {
+const animala = {
     nome: "Julie",
     idade: 12
 };
 
-console.log(calculaIdade.call(pessoa, 30));
-console.log(calculaIdade.call(animal, 4));
+console.log(calculaIdade.call(pessoaa, 30));
+console.log(calculaIdade.call(animala, 4));
 
-console.log(calculaIdade.apply(pessoa, [30]));
-console.log(calculaIdade.apply(animal, [4]));
+console.log(calculaIdade.apply(pessoaa, [30]));
+console.log(calculaIdade.apply(animala, [4]));
