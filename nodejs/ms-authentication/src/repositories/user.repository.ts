@@ -1,4 +1,3 @@
-import { userInfo } from 'os';
 import DatabaseError from '../models/errors/database.error.model';
 import db from '../db';
 import User from '../models/user.model';
@@ -83,7 +82,7 @@ class UserRespository {
     async findByUsernameAndPassword(username:string, password: string) {
         try {
             const query = `
-                SELECt uuid, username
+                SELECT uuid, username
                 FROM application_user
                 WHERE username = $1
                 AND password = crypt($2, $3)
